@@ -26,7 +26,10 @@ try {
 app.get('/', (req, res) => {
   res.send('hello');
 });
-app.use(cors());
+app.use(cors({
+  origin: "https://clientbook-six.vercel.app", // رابط موقعك على Vercel
+  credentials: true // ضروري إذا كنت تستخدم الـ cookies أو الـ token
+}));
 app.use(cookieParser());
 app.use(express.json());
 
@@ -52,3 +55,4 @@ app.use((error, req, res, next) => {
 app.listen(8800, () => {
   console.log("🚀 Server running on port 8800");
 });
+

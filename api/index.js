@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
   res.send('hello');
 });
 app.use(cors({
-  origin: "https://clientbook-six.vercel.app", // رابط موقعك على Vercel
+  origin: "*", // رابط موقعك على Vercel
   credentials: true // ضروري إذا كنت تستخدم الـ cookies أو الـ token
 }));
 app.use(cookieParser());
